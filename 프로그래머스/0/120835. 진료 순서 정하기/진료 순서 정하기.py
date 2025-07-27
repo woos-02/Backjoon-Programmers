@@ -1,8 +1,10 @@
+# 정렬 쓰지 않고 
 def solution(emergency):
-    answer = []
-    sorted_emergency = sorted(emergency, reverse = True)
-    
+    arr = []
     for i in emergency:
-        answer.append(sorted_emergency.index(i) + 1)
-        
-    return answer
+        idx = 1
+        for j in emergency:
+            if i < j:
+                idx += 1
+        arr.append(idx)
+    return arr
